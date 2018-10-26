@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borda2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.CadastroVendedorController2">
+   <top>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: beige;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Abra a sua conta" textAlignment="JUSTIFY">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="210.0" prefWidth="482.0" spacing="20.0" BorderPane.alignment="TOP_CENTER">
+         <BorderPane.margin>
+            <Insets left="100.0" right="100.0" />
+         </BorderPane.margin>
+         <children>
+            <JFXTextField fx:id="nome" focusColor="#12ea3a" labelFloat="true" promptText="Nome" unFocusColor="#12ea3a">
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" top="10.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="cpf" focusColor="#12ea3a" labelFloat="true" promptText="CPF" unFocusColor="#12ea3a">
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXPasswordField fx:id="senha" focusColor="#12ea3a" promptText="Senha" unFocusColor="#12ea3a">
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" />
+               </VBox.margin>
+            </JFXPasswordField>
+            <JFXButton fx:id="cadastrar" onAction="#cadastrarVendedor" style="-fx-background-color: #12ea3a;" text="Cadastrar" textFill="WHITE" />
+            <JFXButton fx:id="voltar" onAction="#voltar" style="-fx-background-color: #12ea3a;" text="Voltar" textFill="WHITE" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

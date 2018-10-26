@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borda" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.FXMLDocumentController">
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </right>
+   <top>
+      <HBox alignment="CENTER" prefHeight="167.0" prefWidth="1200.0" spacing="20.0" style="-fx-background-color: beige;" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <JFXTextField fx:id="userVendedor" focusColor="#12ea3a" labelFloat="true" prefHeight="42.0" prefWidth="167.0" promptText="Usuário" unFocusColor="#12ea3a">
+               <font>
+                  <Font size="21.0" />
+               </font></JFXTextField>
+            <JFXPasswordField fx:id="senha" focusColor="#12ea3a" labelFloat="true" prefHeight="43.0" prefWidth="159.0" promptText="Senha" unFocusColor="#12ea3a">
+               <font>
+                  <Font size="21.0" />
+               </font></JFXPasswordField>
+            <JFXButton fx:id="entrar" onAction="#entrar" prefHeight="35.0" prefWidth="73.0" style="-fx-background-color: #12ea3a;" text="Entrar" textFill="WHITE" />
+            <JFXButton fx:id="teste" onAction="#mudarTela2" prefHeight="37.0" prefWidth="70.0" style="-fx-background-color: #12ea3a;" text="TESTE" textFill="WHITE" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="15.0" left="20.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <JFXButton fx:id="cadastrar" alignment="CENTER" onAction="#mudarTela" prefHeight="52.0" prefWidth="237.0" style="-fx-background-color: #12ea3a;" text="Cadastrar novo vendedor" textFill="WHITE" BorderPane.alignment="TOP_CENTER">
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="80.0" top="10.0" />
+         </BorderPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+   </center>
+</BorderPane>

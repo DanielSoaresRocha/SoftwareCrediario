@@ -3,25 +3,27 @@
  */
 
 CREATE TABLE IF NOT EXISTS cliente(
-    IdCliente INTEGER AUTO_INCREMENT PRIMARY KEY,
+    idCliente INTEGER AUTO_INCREMENT,
     nome VARCHAR(255) NOT NULL,
     cpf INTEGER(11),
     endereco VARCHAR(255) NOT NULL,
     numero INTEGER NOT NULL,
     nomeMae VARCHAR(255)
+    PRIMARY KEY(idCliente)
 );
 
 CREATE TABLE IF NOT EXISTS venda(
-    IdVenda INTEGER AUTO_INCREMENT  PRIMARY KEY,
+    idVenda INTEGER AUTO_INCREMENT,
     nomeMercadoria VARCHAR(255) NOT NULL,
     valorMercadoria DOUBLE NOT NULL,
     numParcelas INTEGER NOT NULL,
     valorParcelas DOUBLE NOT NULL,
     dataVenda DATE NOT NULL,
-    IdCliente INTEGER NOT NULL
+    idCliente INTEGER NOT NULl,
+    PRIMARY KEY(idVenda),
+    FOREIGN KEY(idCliente) REFERENCES cliente (idCliente)
+    
 );    
-
-    ALTER TABLE VENDA ADD CONSTRAINT IF NOT EXISTS FK_venda_cliente FOREIGN KEY(IdCliente) REFERENCES cliente(IdCliente) ON DELETE CASCADE ON UPDATE CASCADE;
 
 CREATE TABLE IF NOT EXISTS vendedor(
     nome VARCHAR(255) NOT NULL,

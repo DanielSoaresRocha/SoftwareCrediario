@@ -21,7 +21,7 @@ import javafx.scene.layout.BorderPane;
  */
 public class MenuController implements Initializable {
     @FXML
-    private JFXButton logoff;
+    private JFXButton logout;
     @FXML
     private Label labelPrincipal;
     @FXML
@@ -48,7 +48,7 @@ public class MenuController implements Initializable {
         try {
             Parent CadastroCliente = FXMLLoader.load(getClass().getResource("/Visao/CadastroCliente.fxml"));
                 bordaPrincipal.setCenter(CadastroCliente);
-                labelPrincipal.setText("Cadastro de Clients");
+                labelPrincipal.setText("Cadastro de Clientes");
         } catch (IOException e) {
                 e.printStackTrace();
         }
@@ -60,7 +60,7 @@ public class MenuController implements Initializable {
         try {
             Parent ConsultaCliente = FXMLLoader.load(getClass().getResource("/Visao/ConsultaCliente.fxml"));
                 bordaPrincipal.setCenter(ConsultaCliente);
-                labelPrincipal.setText("Consulta de Cliente");
+                labelPrincipal.setText("Consultar Cliente");
         } catch (IOException e) {
                 e.printStackTrace();
         }
@@ -72,7 +72,7 @@ public class MenuController implements Initializable {
         try{
             Parent RealizaVenda = FXMLLoader.load(getClass().getResource("/Visao/RealizaVenda.fxml"));
                 bordaPrincipal.setCenter(RealizaVenda);
-                labelPrincipal.setText("Realização de Vendas");
+                labelPrincipal.setText("Realizar nova venda");
         } catch (IOException e){
                 e.printStackTrace();
         }

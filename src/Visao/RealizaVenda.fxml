@@ -4,33 +4,64 @@
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" spacing="20.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="Realizar Venda">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <JFXTextField focusColor="#12ea3a" labelFloat="true" promptText="Nome do cliente" />
-      <JFXTextField focusColor="#12ea3a" labelFloat="true" promptText="Nome da mercadoria" />
-      <JFXTextField focusColor="#12ea3a" labelFloat="true" promptText="Valor total " />
-      <JFXTextField focusColor="#12ea3a" labelFloat="true" promptText="Numero de parcelas" />
-      <JFXTextField focusColor="#12ea3a" labelFloat="true" promptText="Valor das Parcelas" />
-      <JFXDatePicker defaultColor="#12ea3a" prefHeight="26.0" prefWidth="239.0" promptText="Data da Venda" />
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="244.0" spacing="20.0">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="953.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <VBox prefHeight="700.0" prefWidth="1200.0" spacing="20.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="50.0" right="50.0" top="40.0" />
+         </padding>
          <children>
-            <JFXButton alignment="CENTER" buttonType="RAISED" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #12ea3a;" text="Confirmar" textFill="WHITE" />
-            <JFXButton alignment="CENTER" buttonType="RAISED" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: red;" text="Cancelar " textFill="WHITE" />
+            <JFXTextField fx:id="nomeCliente" focusColor="#12ea3a" labelFloat="true" promptText="Nome do cliente">
+               <VBox.margin>
+                  <Insets left="200.0" right="200.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="nomeMercadoria" focusColor="#12ea3a" labelFloat="true" promptText="Nome do produto">
+               <VBox.margin>
+                  <Insets left="200.0" right="200.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="valorMercadoria" focusColor="#12ea3a" labelFloat="true" promptText="Valor da compra">
+               <VBox.margin>
+                  <Insets left="200.0" right="200.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="numParcelas" focusColor="#12ea3a" labelFloat="true" promptText="Numero de Parcelas">
+               <VBox.margin>
+                  <Insets left="200.0" right="200.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="valorParcelas" focusColor="#12ea3a" labelFloat="true" promptText="Valor das parcelas">
+               <VBox.margin>
+                  <Insets left="200.0" right="200.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXDatePicker fx:id="dataVenda" defaultColor="#12ea3a" prefHeight="26.0" prefWidth="178.0" promptText="Data da venda" showWeekNumbers="true">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets left="315.0" right="100.0" />
+               </VBox.margin>
+            </JFXDatePicker>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="334.0" spacing="30.0" style="-fx-background-color: white;">
+               <VBox.margin>
+                  <Insets left="200.0" right="200.0" />
+               </VBox.margin>
+               <children>
+                  <JFXButton buttonType="RAISED" ripplerFill="WHITE" style="-fx-background-color: #12ea3a;" text="Confirmar" textFill="WHITE" />
+                  <JFXButton buttonType="RAISED" ripplerFill="WHITE" style="-fx-background-color: red;" text="Cancelar" textFill="WHITE" />
+               </children>
+            </HBox>
          </children>
-      </HBox>
-   </children>
-   <padding>
-      <Insets left="90.0" right="90.0" top="20.0" />
-   </padding>
-</VBox>
+      </VBox>
+   </center>
+</BorderPane>

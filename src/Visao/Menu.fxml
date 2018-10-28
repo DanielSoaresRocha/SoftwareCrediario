@@ -13,64 +13,65 @@
 
 <BorderPane fx:id="bordaPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.MenuController">
    <left>
-      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="298.0" spacing="10.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+      <VBox fx:id="RealizaVenda" alignment="BASELINE_CENTER" prefHeight="611.0" prefWidth="247.0" spacing="1.0" style="-fx-background-color: WHITE;" BorderPane.alignment="BOTTOM_LEFT">
          <children>
-            <JFXButton fx:id="btCadastrarClientes" alignment="BOTTOM_LEFT" onAction="#CadastrarClientes" prefHeight="58.0" prefWidth="298.0" style="-fx-background-color: #12ea3a;" text="Cadastrar Clientes" textFill="WHITE">
+            <HBox prefHeight="77.0" prefWidth="247.0" />
+            <JFXButton fx:id="btCadastrarClientes" alignment="BASELINE_LEFT" buttonType="RAISED" onAction="#CadastrarClientes" prefHeight="45.0" prefWidth="250.0" ripplerFill="WHITE" style="-fx-background-color: #12ea3a;" text="Cadastrar Clientes" textFill="WHITE">
                <font>
-                  <Font size="26.0" />
+                  <Font size="20.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="35.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../Public/Pictures/Sample%20Pictures/Koala.jpg" />
+                        <Image url="@../../img/membership.png" />
                      </image>
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="consultarClientes" alignment="BOTTOM_LEFT" onAction="#ConsultarClientes" prefHeight="58.0" prefWidth="298.0" style="-fx-background-color: #12ea3a;" text="Consultar Clientes" textFill="WHITE">
+            <JFXButton fx:id="consultarClientes" alignment="BASELINE_LEFT" buttonType="RAISED" onAction="#ConsultarClientes" prefHeight="45.0" prefWidth="250.0" ripplerFill="WHITE" style="-fx-background-color: #12ea3a;" text="Consultar Clientes" textFill="WHITE">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
                <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="35.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../Public/Pictures/Sample%20Pictures/Koala.jpg" />
+                        <Image url="@../../img/human-resources.png" />
                      </image></ImageView>
                </graphic>
                <font>
-                  <Font size="26.0" />
+                  <Font size="20.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="realizarVenda" alignment="BOTTOM_LEFT" prefHeight="56.0" prefWidth="298.0" style="-fx-background-color: #12ea3a;" text="Realizar Venda" textFill="WHITE">
+            <JFXButton fx:id="realizarVenda" alignment="BASELINE_LEFT" buttonType="RAISED" onAction="#RealizaVenda" prefHeight="45.0" prefWidth="250.0" ripplerFill="WHITE" style="-fx-background-color: #12ea3a;" text="Realizar Venda" textFill="WHITE">
                <font>
-                  <Font size="27.0" />
+                  <Font size="20.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="35.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../Public/Pictures/Sample%20Pictures/Hydrangeas.jpg" />
+                        <Image url="@../../img/shopping-cart.png" />
                      </image>
                   </ImageView>
                </graphic></JFXButton>
-            <JFXButton fx:id="cobrancas" alignment="BOTTOM_LEFT" prefHeight="56.0" prefWidth="298.0" style="-fx-background-color: #12ea3a;" text="Cobranças" textFill="WHITE">
+            <JFXButton fx:id="cobrancas" alignment="BASELINE_LEFT" buttonType="RAISED" prefHeight="45.0" prefWidth="250.0" ripplerFill="WHITE" style="-fx-background-color: #12ea3a;" text="Pendencias" textFill="WHITE">
                <font>
-                  <Font size="27.0" />
+                  <Font size="20.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="35.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../Public/Pictures/Sample%20Pictures/Jellyfish.jpg" />
+                        <Image url="@../../img/payment-method.png" />
                      </image>
                   </ImageView>
                </graphic></JFXButton>
-            <JFXButton fx:id="logoff" alignment="BOTTOM_LEFT" onAction="#Sair" prefHeight="61.0" prefWidth="299.0" style="-fx-background-color: #12ea3a;" text="Logoff" textFill="WHITE">
+            <JFXButton fx:id="logout" alignment="BASELINE_LEFT" buttonType="RAISED" onAction="#Sair" prefHeight="45.0" prefWidth="250.0" ripplerFill="WHITE" style="-fx-background-color: red;" text="Logout" textFill="WHITE">
                <font>
-                  <Font size="27.0" />
+                  <Font size="20.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="35.0" fitWidth="29.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../Public/Pictures/Sample%20Pictures/Penguins.jpg" />
+                        <Image url="@../../img/logout.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -81,7 +82,7 @@
    <top>
       <HBox alignment="CENTER" prefHeight="89.0" prefWidth="773.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="labelPrincipal" prefHeight="47.0" prefWidth="391.0" text="O que deseja fazer?">
+            <Label fx:id="labelPrincipal" alignment="BASELINE_CENTER" prefHeight="47.0" prefWidth="391.0" text="BEM VINDO">
                <font>
                   <Font size="27.0" />
                </font>

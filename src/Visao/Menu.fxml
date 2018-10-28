@@ -13,7 +13,7 @@
 
 <BorderPane fx:id="bordaPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.MenuController">
    <left>
-      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="298.0" spacing="10.0" style="-fx-background-color: beige;" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="298.0" spacing="10.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
          <children>
             <JFXButton fx:id="btCadastrarClientes" alignment="BOTTOM_LEFT" onAction="#CadastrarClientes" prefHeight="58.0" prefWidth="298.0" style="-fx-background-color: #12ea3a;" text="Cadastrar Clientes" textFill="WHITE">
                <font>
@@ -79,7 +79,7 @@
       </VBox>
    </left>
    <top>
-      <HBox alignment="CENTER" prefHeight="89.0" prefWidth="773.0" style="-fx-background-color: beige;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="89.0" prefWidth="773.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="labelPrincipal" prefHeight="47.0" prefWidth="391.0" text="O que deseja fazer?">
                <font>
@@ -96,6 +96,6 @@
       </HBox>
    </top>
    <center>
-      <AnchorPane fx:id="anchorInicial" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <AnchorPane fx:id="anchorInicial" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

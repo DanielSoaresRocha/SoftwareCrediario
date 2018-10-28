@@ -47,10 +47,10 @@ public class MenuController implements Initializable {
     private void CadastrarClientes() {
         try {
             Parent CadastroCliente = FXMLLoader.load(getClass().getResource("/Visao/CadastroCliente.fxml"));
-            bordaPrincipal.setCenter(CadastroCliente);
-            labelPrincipal.setText("CADASTRAR CLIENTES");
+                bordaPrincipal.setCenter(CadastroCliente);
+                labelPrincipal.setText("Cadastro de Clients");
         } catch (IOException e) {
-            e.printStackTrace();
+                e.printStackTrace();
         }
 
     }
@@ -59,19 +59,30 @@ public class MenuController implements Initializable {
     private void ConsultarClientes() {
         try {
             Parent ConsultaCliente = FXMLLoader.load(getClass().getResource("/Visao/ConsultaCliente.fxml"));
-            bordaPrincipal.setCenter(ConsultaCliente);
-            labelPrincipal.setText("CONSULTAR CLIENTES");
+                bordaPrincipal.setCenter(ConsultaCliente);
+                labelPrincipal.setText("Consulta de Cliente");
         } catch (IOException e) {
-            e.printStackTrace();
+                e.printStackTrace();
         }
 
+    }
+    
+    @FXML 
+    private void RealizaVenda(){
+        try{
+            Parent RealizaVenda = FXMLLoader.load(getClass().getResource("/Visao/RealizaVenda.fxml"));
+                bordaPrincipal.setCenter(RealizaVenda);
+                labelPrincipal.setText("Realização de Vendas");
+        } catch (IOException e){
+                e.printStackTrace();
+        }
     }
     
     
     @FXML
     private void Sair() throws IOException {
         Parent TelaInicial = FXMLLoader.load(getClass().getResource("/Visao/FXMLDocument.fxml"));
-        Scene scene = new Scene(TelaInicial);
-        SoftwareCrediario.getStagePrincipal().setScene(scene);
+            Scene scene = new Scene(TelaInicial);
+            SoftwareCrediario.getStagePrincipal().setScene(scene);
     }
 }

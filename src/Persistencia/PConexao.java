@@ -7,14 +7,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class PConexao {
+    private String url = "jdbc:h2:~/SoftwareProjeto;INIT=runscript from './src/Persistencia/createTables.sql'";
+    private String user = "admin";
+    private String password = "admin";
     private Connection connection;
-    private String url = "jdbc:postgresql://localhost:5432/sis_vendas";
-    private String user = "postgres";
-    private String password = "postgre";
 
     public void dbConnection() {
         try {
-            Class.forName("org.postgresql.Driver");
+            Class.forName("org.h2.Driver");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(PVendedor.class.getName()).log(Level.SEVERE, null, ex);
         }

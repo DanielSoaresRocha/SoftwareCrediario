@@ -9,12 +9,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borda" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.FXMLDocumentController">
+<BorderPane fx:id="borda" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.FXMLDocumentController">
    <right>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
    </right>
    <top>
-      <HBox alignment="CENTER" prefHeight="167.0" prefWidth="1200.0" spacing="20.0" style="-fx-background-color: beige;" BorderPane.alignment="CENTER_LEFT">
+      <HBox alignment="CENTER" prefHeight="167.0" prefWidth="1200.0" spacing="20.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER_LEFT">
          <children>
             <JFXTextField fx:id="userVendedor" focusColor="#12ea3a" labelFloat="true" prefHeight="42.0" prefWidth="167.0" promptText="Usuário" unFocusColor="#12ea3a">
                <font>
@@ -36,7 +36,7 @@
       </HBox>
    </top>
    <center>
-      <JFXButton fx:id="cadastrar" alignment="CENTER" onAction="#mudarTela" prefHeight="52.0" prefWidth="237.0" style="-fx-background-color: #12ea3a;" text="Cadastrar novo vendedor" textFill="WHITE" BorderPane.alignment="TOP_CENTER">
+      <JFXButton fx:id="cadastrar" alignment="CENTER" onAction="#mudarTela" prefHeight="52.0" prefWidth="173.0" style="-fx-background-color: #12ea3a;" text="Cadastre-se" textFill="WHITE" BorderPane.alignment="TOP_CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" left="80.0" top="10.0" />
          </BorderPane.margin>

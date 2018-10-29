@@ -12,7 +12,7 @@ public class PConexao {
     private String url = "jdbc:postgresql://localhost:5432/sis_vendas";
     private String user = "postgres";
     private String password = "postgre";
-    private String driver = "org.postgressql.Driver";
+    private String driver = "org.postgresql.Driver";
 
     public void dbConnection() {
         try {

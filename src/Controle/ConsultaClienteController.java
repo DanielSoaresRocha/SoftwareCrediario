@@ -24,7 +24,7 @@ import javafx.stage.Stage;
 ;
 
 public class ConsultaClienteController implements Initializable {
-
+    static ConsultaClienteController c1;
     private ObservableList<Cliente> lista = FXCollections.observableArrayList();
 
     @FXML
@@ -51,10 +51,11 @@ public class ConsultaClienteController implements Initializable {
     private JFXButton excluir;
 
     PCliente c = new PCliente();
-
+    static Cliente c2; 
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        c1 = this;
         idClienteColum.setCellValueFactory(new PropertyValueFactory<Cliente, Integer>("IdCliente"));
         nomeClienteColum.setCellValueFactory(new PropertyValueFactory<Cliente, String>("nome"));
         cpfClienteColum.setCellValueFactory(new PropertyValueFactory<Cliente, Integer>("cpf"));
@@ -92,6 +93,7 @@ public class ConsultaClienteController implements Initializable {
             alert.setContentText("Verifique se algum campo está em branco");
             alert.showAndWait();
         }else{
+            c2 = TableView.getSelectionModel().getSelectedItem();
              Parent root = FXMLLoader.load(getClass().getResource("/Visao/EditarCliente.fxml"));
              Scene janela = new Scene(root);
        

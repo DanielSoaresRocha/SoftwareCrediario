@@ -49,12 +49,17 @@
                   <Insets left="20.0" right="30.0" top="20.0" />
                </VBox.margin>
                <children>
-                  <JFXButton fx:id="editar" onAction="#editarCliente" prefHeight="35.0" prefWidth="76.0" style="-fx-background-color: #12ea3a; -fx-background-radius: 15;" text="Editar" textFill="WHITE">
+                  <JFXButton buttonType="RAISED" prefHeight="35.0" style="-fx-background-color: #12ea3a; -fx-background-radius: 15;" text="Realizar venda" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="excluir" onAction="#excluirCliente" prefHeight="35.0" prefWidth="76.0" style="-fx-background-color: red; -fx-background-radius: 15;" text="Excluir" textFill="WHITE">
+                  <JFXButton fx:id="editar" buttonType="RAISED" onAction="#editarCliente" prefHeight="35.0" prefWidth="76.0" style="-fx-background-color: blue; -fx-background-radius: 15;" text="Editar" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="excluir" buttonType="RAISED" onAction="#excluirCliente" prefHeight="35.0" prefWidth="76.0" style="-fx-background-color: red; -fx-background-radius: 15;" text="Excluir" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>

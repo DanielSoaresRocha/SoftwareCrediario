@@ -24,8 +24,9 @@ import javafx.stage.Stage;
 ;
 
 public class ConsultaClienteController implements Initializable {
+
     static ConsultaClienteController c1;
-    private ObservableList<Cliente> lista = FXCollections.observableArrayList();
+    static ObservableList<Cliente> lista = FXCollections.observableArrayList();
 
     @FXML
     private TableView<Cliente> TableView;
@@ -51,8 +52,16 @@ public class ConsultaClienteController implements Initializable {
     private JFXButton excluir;
 
     PCliente c = new PCliente();
-    static Cliente c2; 
-    
+    static Cliente c2;
+
+    public void aviso() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Atenção");
+        alert.setHeaderText("Campos em branco");
+        alert.setContentText("Verifique se algum campo está em branco");
+        alert.showAndWait();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         c1 = this;
@@ -63,11 +72,12 @@ public class ConsultaClienteController implements Initializable {
         NumeroClienteColum.setCellValueFactory(new PropertyValueFactory<Cliente, Integer>("numero"));
         NomeMaeColum.setCellValueFactory(new PropertyValueFactory<Cliente, String>("nomeMae"));
 
+        lista.clear();
         lista.addAll(c.listCliente());
         TableView.setItems(lista);
     }
 
-    //USAR LIKE NA BUSCA DO CLIENTE POR NOME
+    //USAR LIKE NA BUSCA DO CLIENTE POR NOME  
     @FXML
     public void consultar() {
         System.out.println("Entrouuu");
@@ -78,29 +88,37 @@ public class ConsultaClienteController implements Initializable {
 
     @FXML
     public void excluirCliente() {
-        c.DeleteFromCliente(TableView.getSelectionModel().getSelectedItem());
-        lista.clear();
-        lista.addAll(c.listCliente());
-        TableView.setItems(lista);
+        if (TableView.getSelectionModel().isEmpty()) {
+            aviso();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Atenção");
+            alert.setHeaderText("Exclusão de cliente");
+            alert.setContentText("Deseja realmente excluir este cliente?");
+            alert.showAndWait();
+            
+            c.DeleteFromCliente(TableView.getSelectionModel().getSelectedItem());
+            lista.clear();
+            lista.addAll(c.listCliente());
+            TableView.setItems(lista);
+            
+        }
     }
-    
+
     @FXML
     public void editarCliente() throws IOException {
         if (TableView.getSelectionModel().isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Atenção");
-            alert.setHeaderText("Campos em branco");
-            alert.setContentText("Verifique se algum campo está em branco");
-            alert.showAndWait();
-        }else{
+            aviso();
+        } else {
             c2 = TableView.getSelectionModel().getSelectedItem();
-             Parent root = FXMLLoader.load(getClass().getResource("/Visao/EditarCliente.fxml"));
-             Scene janela = new Scene(root);
-       
+            Parent root = FXMLLoader.load(getClass().getResource("/Visao/EditarCliente.fxml"));
+            Scene janela = new Scene(root);
+
             Stage stage = new Stage();
             stage.setScene(janela);
             stage.show();
             stage.setTitle("Editar Cliente");
+
         }
     }
 

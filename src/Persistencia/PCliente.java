@@ -113,4 +113,25 @@ public class PCliente {
         }
         con.closeConnection();
     }
+     
+     public void editCliente(Cliente c, String novoNome, int novoCpf, String novoEndereco, int novoTelefone, String nomeMae) {
+        con.dbConnection();
+        String query = "UPDATE cliente SET nome = ?, cpf = ?,endereco = ?, numero = ?, nomemae = ? WHERE idcliente = ?;";
+        try {
+            PreparedStatement pst = con.getConnection().prepareStatement(query);
+            pst.setString(1, novoNome);
+            pst.setInt(2, novoCpf);
+            pst.setString(3, novoEndereco);
+            pst.setInt(4, novoTelefone);
+            pst.setString(5, nomeMae);
+            pst.setInt(6, c.getIdCliente());
+            System.out.println(pst.toString());
+            pst.executeUpdate();
+            System.out.println("Cliente editado");
+        } catch (SQLException ex) {
+            System.out.println("n deu certo");
+            Logger.getLogger(PVendedor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        con.closeConnection();
+    }
 }

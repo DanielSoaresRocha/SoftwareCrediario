@@ -27,7 +27,7 @@
       <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="229.0" spacing="20.0">
          <children>
             <JFXButton fx:id="salvar" buttonType="RAISED" onAction="#salvar" ripplerFill="#f8f8f8" style="-fx-background-color: #12ea3a; -fx-border-style: 10;" text="Salvar" textFill="WHITE" />
-            <JFXButton fx:id="cancelar" buttonType="RAISED" style="-fx-background-color: red;" text="Cancelar" textFill="WHITE" />
+            <JFXButton fx:id="cancelar" buttonType="RAISED" onAction="#sair" style="-fx-background-color: red;" text="Cancelar" textFill="WHITE" />
          </children>
       </HBox>
    </children>

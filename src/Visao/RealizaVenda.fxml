@@ -11,7 +11,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="953.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.RealizaVendaController">
    <center>
-      <VBox prefHeight="700.0" prefWidth="1200.0" spacing="20.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="611.0" prefWidth="953.0" spacing="20.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
          </BorderPane.margin>
@@ -57,8 +57,8 @@
                   <Insets left="200.0" right="200.0" />
                </VBox.margin>
                <children>
-                  <JFXButton buttonType="RAISED" ripplerFill="WHITE" style="-fx-background-color: #12ea3a;" text="Confirmar" textFill="WHITE" />
-                  <JFXButton buttonType="RAISED" ripplerFill="WHITE" style="-fx-background-color: red;" text="Cancelar" textFill="WHITE" />
+                  <JFXButton fx:id="confirmar" buttonType="RAISED" ripplerFill="WHITE" style="-fx-background-color: #12ea3a;" text="Confirmar" textFill="WHITE" />
+                  <JFXButton fx:id="cancelar" buttonType="RAISED" ripplerFill="WHITE" style="-fx-background-color: red;" text="Cancelar" textFill="WHITE" />
                </children>
             </HBox>
          </children>

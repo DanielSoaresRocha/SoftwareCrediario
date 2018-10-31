@@ -23,7 +23,7 @@ public class MenuController implements Initializable {
     @FXML
     private JFXButton logout;
     @FXML
-    private Label labelPrincipal;
+    Label labelPrincipal;
     @FXML
     private JFXButton consultarClientes;
     @FXML
@@ -31,16 +31,15 @@ public class MenuController implements Initializable {
     @FXML
     private JFXButton cobrancas;
     @FXML
-    private BorderPane bordaPrincipal;
+    BorderPane bordaPrincipal;
     @FXML
     private AnchorPane anchorInicial;
     
-    /**
-     * Initializes the controller class.
-     */
+    static MenuController menu;
+            
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        menu = this;
     }
     
     @FXML
@@ -56,7 +55,7 @@ public class MenuController implements Initializable {
     }
     
     @FXML
-    private void ConsultarClientes() {
+    void ConsultarClientes() {
         try {
             Parent ConsultaCliente = FXMLLoader.load(getClass().getResource("/Visao/ConsultaCliente.fxml"));
                 bordaPrincipal.setCenter(ConsultaCliente);

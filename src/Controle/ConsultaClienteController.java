@@ -1,5 +1,6 @@
 package Controle;
 
+import Controle.MenuController;
 import Modelo.Cliente;
 import Persistencia.PCliente;
 import com.jfoenix.controls.JFXButton;
@@ -7,6 +8,8 @@ import com.jfoenix.controls.JFXTextField;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -50,7 +54,10 @@ public class ConsultaClienteController implements Initializable {
     private JFXButton editar;
     @FXML
     private JFXButton excluir;
+    @FXML
+    private JFXButton realizaVenda;
 
+    Stage stage = new Stage();
     PCliente c = new PCliente();
     static Cliente c2;
 
@@ -88,20 +95,24 @@ public class ConsultaClienteController implements Initializable {
 
     @FXML
     public void excluirCliente() {
+        ArrayList<Cliente> nomeCliente = new ArrayList<>();
+        nomeCliente.add(TableView.getSelectionModel().getSelectedItem());
+        System.out.println(nomeCliente.get(0));
         if (TableView.getSelectionModel().isEmpty()) {
             aviso();
         } else {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Atenção");
             alert.setHeaderText("Exclusão de cliente");
-            alert.setContentText("Deseja realmente excluir este cliente?");
-            alert.showAndWait();
-            
-            c.DeleteFromCliente(TableView.getSelectionModel().getSelectedItem());
-            lista.clear();
-            lista.addAll(c.listCliente());
-            TableView.setItems(lista);
-            
+            alert.setContentText("Deseja realmente excluir " + nomeCliente.get(0) + " ? ");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK) {
+                c.DeleteFromCliente(TableView.getSelectionModel().getSelectedItem());
+                lista.clear();
+                lista.addAll(c.listCliente());
+                TableView.setItems(lista);
+            }
         }
     }
 
@@ -114,7 +125,7 @@ public class ConsultaClienteController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/Visao/EditarCliente.fxml"));
             Scene janela = new Scene(root);
 
-            Stage stage = new Stage();
+            //Stage stage = new Stage();
             stage.setScene(janela);
             stage.show();
             stage.setTitle("Editar Cliente");
@@ -122,4 +133,13 @@ public class ConsultaClienteController implements Initializable {
         }
     }
 
+    public void realizarVenda() throws IOException {
+        if (TableView.getSelectionModel().isEmpty()) {
+            aviso();
+        } else {
+            Parent ConsultaCliente = FXMLLoader.load(getClass().getResource("/Visao/RealizaVenda.fxml"));
+            MenuController.menu.bordaPrincipal.setCenter(ConsultaCliente);
+            MenuController.menu.labelPrincipal.setText("Realizar venda");
+        }
+    }
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" snapToPixel="false" spacing="20.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.EditarVendaController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="49.0" prefWidth="191.0" text="Edição de Venda">
+         <font>
+            <Font name="Berlin Sans FB" size="18.0" />
+         </font>
+      </Label>
+      <JFXCheckBox fx:id="status" checkedColor="#12ea13" text="Mês pago?" />
+      <JFXTextField fx:id="mercadoria" focusColor="#12ea3a" labelFloat="true" promptText="Mercadoria">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </JFXTextField>
+      <JFXTextField fx:id="vMercadoria" focusColor="#12ea3a" labelFloat="true" promptText="Valor da mercadoria" />
+      <JFXTextField fx:id="numParcelas" focusColor="#12ea3a" labelFloat="true" pickOnBounds="false" promptText="Número de parcelas" />
+      <JFXTextField fx:id="vParcelas" focusColor="#12ea3a" labelFloat="true" promptText="Valor das parcelas" />
+      <JFXDatePicker fx:id="data" defaultColor="#12ea13" maxWidth="200.0" promptText="Data da venda" snapToPixel="false">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </JFXDatePicker>
+      <JFXDatePicker fx:id="dataCobranca" defaultColor="#12ea13" maxWidth="200.0" promptText="Data da cobrança" snapToPixel="false" />
+      <JFXTextField fx:id="valorP" focusColor="#12ea3a" labelFloat="true" promptText="Valor pago" unFocusColor="BLACK" />
+      <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="229.0" spacing="20.0">
+         <children>
+            <JFXButton fx:id="salvar" buttonType="RAISED" onAction="#salvar" prefHeight="20.0" prefWidth="80.0" ripplerFill="#f8f8f8" style="-fx-background-color: #12ea3a; -fx-background-radius: 15;" text="Salvar" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="cancelar" buttonType="RAISED" onAction="#sair" prefHeight="20.0" prefWidth="80.0" style="-fx-background-color: red; -fx-background-radius: 15;" text="Cancelar" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets left="100.0" right="100.0" top="20.0" />
+   </padding>
+</VBox>

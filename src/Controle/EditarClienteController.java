@@ -27,6 +27,7 @@ public class EditarClienteController implements Initializable {
     
     PCliente c = new PCliente();
     Cliente c2;
+    
     @FXML
     private JFXButton salvar;
     @FXML
@@ -45,9 +46,9 @@ public class EditarClienteController implements Initializable {
     
     @FXML
     public void salvar(){
-        int cpff = Integer.parseInt(cpf.getText());
-        int telefonee = Integer.parseInt(telefone.getText());
-        c.editCliente(c2, nome.getText(),cpff, endereco.getText(), telefonee, nomeMae.getText());
+        //int cpff = Integer.parseInt(cpf.getText());
+        //int telefonee = Integer.parseInt(telefone.getText());
+        c.editCliente(c2, nome.getText(),cpf.getText(), endereco.getText(), telefone.getText(), nomeMae.getText());
         ConsultaClienteController.c1.stage.close();
         MenuController.menu.ConsultarClientes();
 //ConsultaClienteController.atualizar();

@@ -25,7 +25,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-;
 
 public class ConsultaClienteController implements Initializable {
 
@@ -87,7 +86,6 @@ public class ConsultaClienteController implements Initializable {
     //USAR LIKE NA BUSCA DO CLIENTE POR NOME  
     @FXML
     public void consultar() {
-        System.out.println("Entrouuu");
         lista.clear();
         lista.addAll(c.consultaCliente(consulta.getText()));
         TableView.setItems(lista);
@@ -137,6 +135,7 @@ public class ConsultaClienteController implements Initializable {
         if (TableView.getSelectionModel().isEmpty()) {
             aviso();
         } else {
+            c2 = TableView.getSelectionModel().getSelectedItem();
             Parent ConsultaCliente = FXMLLoader.load(getClass().getResource("/Visao/RealizaVenda.fxml"));
             MenuController.menu.bordaPrincipal.setCenter(ConsultaCliente);
             MenuController.menu.labelPrincipal.setText("Realizar venda");

@@ -40,12 +40,10 @@ public class CadastroVendedorController2 implements Initializable {
     
     @FXML
     private void cadastrarVendedor() {    
-        int i = Integer.parseInt(cpf.getText());
         PVendedor con = new PVendedor();
         System.out.println(nome.getText());
         System.out.println(senha.getText());
-        System.out.println(i);
-        con.insertIntoVendedor(nome.getText(), i, senha.getText());
+        con.insertIntoVendedor(nome.getText(), cpf.getText(), senha.getText());
  
     }
 

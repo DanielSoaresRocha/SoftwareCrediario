@@ -5,13 +5,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-//import java.sql.*;
+
 
 public class PConexao {
     private Connection connection;
     private String url = "jdbc:postgresql://localhost:5432/sis_vendas";
     private String user = "postgres";
-    private String password = "postgre";
+    private String password = "daniel";
     private String driver = "org.postgresql.Driver";
 
     public void dbConnection() {

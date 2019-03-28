@@ -11,14 +11,14 @@ public class PVendedor {
 
     private PConexao con = new PConexao();
 
-    public void insertIntoVendedor(String nome, int cpf, String senha) {
+    public void insertIntoVendedor(String nome, String cpf, String senha) {
         con.dbConnection();
         String query = "INSERT INTO VENDEDOR(nome, cpf, senha ) VALUES (?,?,?);";
 
         try {
             PreparedStatement pst = con.getConnection().prepareStatement(query);
             pst.setString(1, nome);
-            pst.setInt(2, cpf);
+            pst.setString(2, cpf);
             pst.setString(3, senha);
             pst.executeUpdate();
         } catch (SQLException ex) {
@@ -62,8 +62,8 @@ public class PVendedor {
             PreparedStatement pst = con.getConnection().prepareStatement(query);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
-                String x = rs.getString(1);
-                String y = rs.getString(3);
+                String x = rs.getString(2);
+                String y = rs.getString(4);
                 if ((x.equals(user)) && y.equals(senha)) {
                     System.out.println("Encontrado");
                     return true;

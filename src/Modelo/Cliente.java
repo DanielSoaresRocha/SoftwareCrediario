@@ -3,13 +3,12 @@ package Modelo;
 public class Cliente {
     private int IdCliente;
     private String nome;
-    private int cpf;     
+    private String cpf;     
     private String endereco;
-    private int numero;
+    private String numero;
     private String nomeMae;
 
-
-    public Cliente(int IdCliente, String nome, int cpf, String endereco, int numero, String nomeMae) {
+    public Cliente(int IdCliente, String nome, String cpf, String endereco, String numero, String nomeMae) {
         this.IdCliente = IdCliente;
         this.nome = nome;
         this.cpf = cpf;
@@ -17,30 +16,13 @@ public class Cliente {
         this.numero = numero;
         this.nomeMae = nomeMae;
     }
-    
-    
+
     public int getIdCliente() {
         return IdCliente;
     }
 
     public void setIdCliente(int IdCliente) {
         this.IdCliente = IdCliente;
-    }
-
-    public String getNomeMae() {
-        return nomeMae;
-    }
-
-    public void setNomeMae(String nomeMae) {
-        this.nomeMae = nomeMae;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
     }
 
     public String getNome() {
@@ -51,22 +33,42 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public int getNumero() {
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
+
+    public String getNomeMae() {
+        return nomeMae;
+    }
+
+    public void setNomeMae(String nomeMae) {
+        this.nomeMae = nomeMae;
+    }
+
     
+    
+    
+   
     @Override
     public String toString() {
         return nome;

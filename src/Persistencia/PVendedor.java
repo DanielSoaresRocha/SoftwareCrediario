@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 public class PVendedor {
 
     private PConexao con = new PConexao();
-
+    
     public void insertIntoVendedor(String nome, String cpf, String senha) {
         con.dbConnection();
         String query = "INSERT INTO VENDEDOR(nome, cpf, senha ) VALUES (?,?,?);";
